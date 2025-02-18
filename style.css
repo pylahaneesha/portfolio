@@ -1,0 +1,718 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-page black background */
+body {
+  
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header fixed at the top */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    z-index: 1000;
+}
+
+/* Space for content so it doesn't go under the header */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 120px; /* To push below the header */
+    padding: 50px;
+    background-color: black;
+    color: aliceblue;
+    height:80vh;
+}
+
+/* Left Side - Text */
+.text-content {
+    flex: 1;
+    text-align: left;
+    padding-left: 50px;
+}
+
+/* Introduction Heading */
+.intro-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: White;
+    margin-bottom: 10px;
+}
+
+/* Sub-heading */
+.sub-heading {
+    font-size: 40px;
+    font-weight: lighter;
+    color: red;
+    margin-bottom: 20px;
+}
+
+/* Portfolio Text */
+.portfolio-text {
+    font-size: 20px;
+    color: #ddd;
+    font-style:normal;
+}
+
+/* Right Side - Profile Image */
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+}
+
+/* Profile Image Animation */
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    animation: floatAnimation 3s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Hover Effect */
+.profile-image:hover {
+    transform: scale(1.1);
+    animation: none; /* Stops floating when hovered */
+}
+
+/* Navigation */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+}
+
+.header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Active link styling */
+.header ul li.active a {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.header ul li a:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+/* Resume Button */
+.resume-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.resume-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .header ul {
+        flex-direction: column;
+    }
+
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-content {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .image-content {
+        padding-right: 0;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+/* Buttons Container */
+.button-group {
+    display: flex;
+    gap: 20px; /* Adds spacing between buttons */
+    margin-top: 20px; /* Adds spacing from the previous text */
+}
+
+
+
+/* Skill Button */
+.skill-btn {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.skill-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+/* Responsive: Stack buttons vertically for small screens */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        gap: 10px; /* Smaller gap for mobile */
+        align-items: center;
+    }
+}
+
+
+/* Social Icons Container */
+.social {
+    display: flex;
+    gap: 15px; /* Reduced gap for better alignment */
+    justify-content: center; /* Centers icons */
+    margin-top: 20px; /* Adds space above social icons */
+}
+
+/* Social Icons Styling */
+.social a {
+    color: white;
+    font-size: 24px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Proper center alignment */
+}
+
+/* Hover Effect */
+.social a:hover {
+    background-color: red;
+    transform: scale(1.1);
+}
+
+/* Responsive: Stack buttons and icons neatly */
+@media (max-width: 768px) {
+    
+
+    .social {
+        flex-direction: row;
+        gap: 10px; /* Reduced gap for better fit */
+    }
+}
+
+.About {
+    text-align: center;
+    height:100vh;
+    background-color: black;
+    color:white;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-decoration: none;
+    font-size: 16px;
+    
+    transition: 0.3s ease-in-out;
+}
+#about .row {
+    display: flex; /* Ensures columns are aligned in a row */
+    align-items: center; /* Vertically centers the content */
+}
+
+
+.text1 {
+    font-family: Arial, sans-serif; /* Set a font for the text */
+    font-size: 18px; /* Adjusts the font size for readability */
+    line-height: 1.6; /* Sets line height for better spacing */
+}
+
+.contact-btn {
+    padding: 10px 20px; /* Adjusts button padding */
+    background-color: red; /* Sets the background color of the button */
+    color: white; /* Text color for the button */
+    border: none; /* Removes button border */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer; /* Adds a cursor pointer for interactivity */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.contact-btn:hover {
+    background-color: darkred; /* Changes the background color when hovering */
+}
+
+.text1{
+    transition:0.5s ease;
+    cursor:pointer;
+    
+}
+.text1 p{
+    text-align: left;
+}
+
+.skill{
+    height:120vh;
+    text-align: center;
+    width:100%;
+}
+.contact-btn {
+    background-color: red;
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.contact-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+.skill h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.skill-card {
+    text-align: center;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(185, 8, 8, 0.929);
+    transition: transform 0.3s ease-in-out;
+    width: 250px;
+}
+.skill-card:hover {
+    transform: scale(1.05);
+}
+.skill-card img {
+    width: 50px;
+    height: 50px;
+}
+.skill-card h3 {
+    margin-top: 15px;
+}
+.skill-card img {
+   
+    object-fit: cover;
+    object-position: center;
+}
+
+/* General Portfolio Section */
+#portfolio {
+    padding: 50px 0;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+/* Work Grid */
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+/* Work Card */
+.work {
+    border-radius: 10px;
+    height: 200px;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.work img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s;
+ 
+}
+
+
+.layer {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #bc3661);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Work Hover Effect */
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Text Inside Layer */
+.layer h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.works-btn {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    left:0;
+    margin:5px;
+   
+    
+}
+
+.works-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+.work-btn {
+    background-color:red;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+    margin: 15px;
+ 
+   
+    
+}
+
+.work-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    
+   
+  }
+
+  .contact-form {
+    background-color: black;
+    color:white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+   
+  }
+
+  .contact-form h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  input[type="text"], input[type="email"], input[type="number"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 120px;
+  }
+
+  .gender-section {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .gender-section label {
+    font-weight: normal;
+    color: #333;
+  }
+
+  .contact1-btn{
+    background-color:rgb(223, 58, 58);
+    color: white;
+    padding: 12px  20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 10px;
+ 
+   
+  }
+
+  .contact1-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+.messages{
+    left: 0;
+}
+ 
+  .contact-container {
+    background-image: url('https://example.com/food-background.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    
+  }
+  .contact h1{
+text-align: center;
+color:aliceblue;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .contact-form {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+
+  
+
+.work {
+    display: block; /* Make sure all works are visible initially */
+    margin-bottom: 20px;
+    
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact {
+    text-align: center;
+    height:100vh; 
+    background-color: black;
+    color:white;
+    padding-left: 30%;
+    padding-right: 30%;
+    text-decoration: none;
+    font-size: 16px; 
+    transition: 0.3s ease-in-out;
+}
+
+.contact-section {
+    padding: 50px 10%;
+}
+.contact-info h5 {
+    color: red;
+    margin-bottom: 10px;
+}
+.contact-info p {
+    margin: 5px 0;
+}
+.custom-form {
+   
+    padding: 30px;
+    border-radius: 10px;
+   
+}
+.form-control {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    transition: border 0.3s ease-in-out;
+}
+.form-control:focus {
+    border: 2px solid red;
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+}
+.btn-custom {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.btn-custom:hover {
+    background-color: darkred;
+
+}
+.social1{
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    left:0;
+}
+.social1 a {
+    color: white;
+    font-size: 24px;
+    transition: 0.3s ease;
+    text-decoration: none;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 50px; /* Adjusted size */
+    height: 50px; /* Adjusted size */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Proper center alignment */
+    margin-top: 10px;
+    margin:0;
+}
+.social1 a:hover {
+    color: red;
+    transform: scale(1.2);
+}
+#fname::placeholder {
+    color: white;
+}
+#lname::placeholder {
+    color: white;
+}
+#message::placeholder {
+    color: white;
+}
+@media (max-width: 768px) {
+    
+
+    .social1 {
+        flex-direction: row;
+        gap: 10px; /* Reduced gap for better fit */
+    }
+}
